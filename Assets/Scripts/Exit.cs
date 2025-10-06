@@ -1,16 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Exit : MonoBehaviour
+public class BeginTour : MonoBehaviour
 {
-    // Call this from a UI button
-    public void QuitGame()
-    {
-        // Works in a built game
-        Application.Quit();
+    public string sceneToLoad = "MainScene"; 
 
-        // Only for debugging in the Unity Editor
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+    public void LoadTour()
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
